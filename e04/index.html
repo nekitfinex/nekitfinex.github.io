@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>
+Упражнение 4: добавляет круг в место, указанное мышкой
+</title>
+<style>
+.circle100 {
+  /* красный кружок R=50px */
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%
+}
+</style>
+<script>
+  /* этa функция должна добавить
+  <div class="circle100" id="x"+x+"y"+y></div>
+       var d = document.getById("x"+x+"y"+y);
+     и поменять ему:
+       d.style.position = "absolute";
+       d.style.left = (x - radius) + 'px';
+       d.style.top = (y - radius) + 'px'
+  */
+  function drawCircle100At(x, y, r) {
+    // alert(`I should draw a circle r=${r} at x=${x}, y=${y}`);
+  }
+  window.onclick = function(evt) {
+    // https://stackoverflow.com/questions/15536998/why-does-this-event-handler-use-e-e-event
+    evt = evt || window.event;
+    const radius = 50;
+    alert(`Position: (${evt.clientX}, ${evt.clientY})`);
+    var x = 100; // исправить!
+    var y = 200; // исправить!
+    drawCircle100At(x, y, radius);
+  }
+</script>
+</head>
+<body>
+</body>
+</html>

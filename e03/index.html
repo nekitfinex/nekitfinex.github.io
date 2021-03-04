@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>
+Упражнение 3: в произвольное место добавляет круг
+</title>
+<style>
+.circle100 {
+  /* красный кружок r=50px */
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%
+}
+</style>
+<script>
+  /* этa функция должна найти div class="circle100"
+       var d = document.getById('loneCircle');
+     и поменять его так:
+       d.style.position = "absolute";
+       d.style.left = (x - radius) + 'px';
+       d.style.top = (y - radius) + 'px'
+     Quiz: <div> position defined by its center or one of its corners?
+  */
+  function drawCircle100At(x, y, r) {
+    alert("I should draw a circle radius " + r+ " at x=" + x + ", y=" + y);
+  }
+  window.onload = function() {
+    var radius = 50;
+    var x = Math.floor(window.innerWidth * Math.random());
+    var y = Math.floor(window.innerHeight * Math.random());
+    drawCircle100At(x, y, radius);
+  }
+</script>
+</head>
+<body>
+  <div class="circle100" id="loneCircle">
+    <!-- это красный кружок диаметром 100 пикселей -->
+  </div>
+</body>
+</html>
