@@ -21,15 +21,14 @@
   /* этa функция должна вставить текущее время в aDiv */
   function updateClock(aDiv) {
     const d = new Date();
- // aDiv.innerHTML = d.toString();
     // e.g. "Mon Mar 01 2021 14:16:31 GMT+0300 (Moscow Standard Time)"
     aDiv.innerHTML = d;
   }
 
   window.onload = function() {
     const clockDiv = document.getElementById('clock');
-  //updateClock(clockDiv);
-    setInterval(updateClock, 1500, clockDiv); // every 1500 ms
+    updateClock(clockDiv);
+    setInterval(updateClock, 1000, clockDiv); // every 1000 ms
   }
 </script>
 </head>
