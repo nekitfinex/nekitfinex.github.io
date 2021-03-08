@@ -15,16 +15,19 @@
 }
 </style>
 <script>
-  /* этa функция должна найти div class="circle100"
-       var d = document.getById('loneCircle');
-     и поменять его так:
-       d.style.position = "absolute";
-       d.style.left = (x - radius) + 'px';
+  /* этa функция adds div class="circle100"
+     !! поменять !!
+       d.style.left = (x - radius) + 'px'
        d.style.top = (y - radius) + 'px'
-     Quiz: <div> position defined by its center or one of its corners?
   */
   function drawCircle100At(x, y, r) {
-    alert("I should draw a circle radius " + r+ " at x=" + x + ", y=" + y);
+    let c100 = document.createElement('div');
+    c100.classList.add('circle100');
+    c100.style.position = "absolute";
+    c100.style.left = 100 + 'px';
+    c100.style.top = 10 + 'px';
+    document.body.appendChild(c100);
+    //alert("I should draw a circle of radius " + r+ " at x=" + x + ", y=" + y);
   }
   window.onload = function() {
     var radius = 50;
@@ -34,9 +37,4 @@
   }
 </script>
 </head>
-<body>
-  <div class="circle100" id="loneCircle">
-    <!-- это красный кружок диаметром 100 пикселей -->
-  </div>
-</body>
 </html>
