@@ -21,6 +21,25 @@
 </style>
 <script>
   function handleKey(o, direction) {
+    let rect = o.getBoundingClientRect();
+    switch (direction) {
+        case 'd':
+          // to the right 
+          o.style.left = (rect.right + 10) + 'px';
+          break;
+        case 's':
+          // down
+          o.style.top = (rect.bottom + 10) + 'px';
+          break;
+        case 'a':
+          // to the left
+          o.style.left = (rect.left + 10) + 'px';
+          break;
+        case 'w':
+          //
+          o.style.top = (rect.top + 10) + 'px';
+          break;
+      }
     o.innerHTML = direction;
   }
   window.onload = function() {
