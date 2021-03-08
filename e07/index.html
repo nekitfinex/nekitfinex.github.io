@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>
+Упражнение 7: печатает массив на экране и даёт удалить любой элемент
+</title>
+<style>
+span.selDate {
+    user-select: all;
+    cursor: pointer;
+}
+</style>
+<script>
+  dates = [988, 1149, 1236, 1237, 1380, 1462, 1533, 1565, 1572, 1581, 1584]
+
+  function dropSelected() {
+    document.getSelection().getRangeAt(0).deleteContents();
+  }
+
+  window.onload = function() {
+    let timeline = document.createElement('div');
+    timeline.style.border = '1px';
+    timeline.style.wordSpacing = '1em'
+    document.body.appendChild(timeline);
+    let opn = document.createTextNode('[');
+    timeline.appendChild(opn);
+    dates.forEach( function(d, idx) {
+      let s = document.createElement('span');
+      s.id = 'sd' + idx;
+      s.className = 'selDate';
+      s.textContent = ' ' + d;
+      timeline.appendChild(s)
+    });
+    let clo = document.createTextNode('] ');
+    timeline.appendChild(clo);
+    let btn = document.createElement('button');
+    btn.textContent = "удалить выбранное";
+    timeline.appendChild(btn);
+    btn.onclick = dropSelected;
+  }
+</script>
+</head>
+</html>
