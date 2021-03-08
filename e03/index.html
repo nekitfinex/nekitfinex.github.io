@@ -24,13 +24,12 @@
     let c100 = document.createElement('div');
     c100.classList.add('circle100');
     c100.style.position = "absolute";
-    c100.style.left = 100 + 'px';
-    c100.style.top = 10 + 'px';
+    c100.style.left = (x - r) + 'px';
+    c100.style.top = (y - r) + 'px';
     document.body.appendChild(c100);
-    //alert("I should draw a circle of radius " + r+ " at x=" + x + ", y=" + y);
   }
   window.onload = function() {
-    var radius = 50;
+    const radius = 50;
     var x = Math.floor(window.innerWidth * Math.random());
     var y = Math.floor(window.innerHeight * Math.random());
     drawCircle100At(x, y, radius);

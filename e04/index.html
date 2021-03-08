@@ -24,19 +24,22 @@
        d.style.top = (y - radius) + 'px'
   */
   function drawCircle100At(x, y, r) {
-    // alert(`I should draw a circle r=${r} at x=${x}, y=${y}`);
+    let c100 = document.createElement('div');
+    c100.classList.add('circle100');
+    c100.style.position = "absolute";
+    c100.style.left = (x - r) + 'px';
+    c100.style.top = (y - r) + 'px';
+    document.body.appendChild(c100);
   }
   window.onclick = function(evt) {
     // https://stackoverflow.com/questions/15536998/why-does-this-event-handler-use-e-e-event
     evt = evt || window.event;
     const radius = 50;
-    alert(`Position: (${evt.clientX}, ${evt.clientY})`);
-    var x = 100; // исправить!
-    var y = 200; // исправить!
+    // alert(`Position: (${evt.clientX}, ${evt.clientY})`);
+    var x = evt.clientX;
+    var y = evt.clientY;
     drawCircle100At(x, y, radius);
   }
 </script>
 </head>
-<body>
-</body>
 </html>
