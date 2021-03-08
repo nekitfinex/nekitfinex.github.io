@@ -21,17 +21,15 @@
   }
 </style>
 <script>
-  /* этa функция должна менять аттрибут opacity
-     развёрнутый пример с затемнением есть на CodePen
-     https://codepen.io/nazaneyn/pen/KKMjwEM
-     https://dev.to/nazanin_ashrafi/how-to-darken-an-image-with-css-4f5h
-  */
-  function changeOpacity(message) {
-    alert(message);
+  function changeOpacity(elem, val) {
+    elem.style.opacity = val;
   }
   window.onload = function() {
+    let currentOpacity = 1
+    let okno = document.getElementById("okno")
     document.getElementById("decrOpa").onclick = function fun() {
-      changeOpacity("- button");
+      currentOpacity -= 0.1
+      changeOpacity(okno, currentOpacity);
     }
   }
 </script>
@@ -40,7 +38,7 @@
   <div>
     <button id="decrOpa">-opacity</button> <button id="incrOpa">+Opacity</button>
   </div>
-  <div>
+  <div id="okno">
     <img src="../site1/as.jpg">
   </div>
 </body>
